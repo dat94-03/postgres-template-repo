@@ -1,0 +1,37 @@
+apiVersion: backstage.io/v1beta3
+kind: Template
+metadata:
+  name: postgres-db
+  title: "Postgres Database Service"
+  description: "Scaffold a new Postgres DB running in a local Docker container"
+  tags:
+    - database
+    - postgres
+spec:
+  owner: NGT-Platform
+  type: service
+  parameters:
+    - title: Database Settings
+      required:
+        - name
+      properties:
+        name:
+          title: Database Name
+          type: string
+          description: Unique name for the Postgres container (also used as DB name)
+  steps:
+    - id: generate
+      name: Generate config
+      action: fetch:template
+      input:
+        url: ./skeleton
+        targetPath: .
+        values:
+          name: ${{ parameters.name }}
+    - id: publish
+      name: Publish to GitHub
+      action: publish:github
+      input:
+        repoUrl: github.com?owner=dat94-03&repo=${{ parameters.name }}
+        defaultBranch: main
+        sourcePath: .

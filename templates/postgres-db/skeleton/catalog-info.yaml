@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ${{ parameters.name }}
+  description: "Postgres database service ${{ parameters.name }}"
+  annotations:
+    mycompany.com/docker-container-name: ${{ parameters.name }}
+spec:
+  type: service
+  owner: NGT-Service
+  lifecycle: experimental
