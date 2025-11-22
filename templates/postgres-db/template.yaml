@@ -1,4 +1,4 @@
-apiVersion: backstage.io/v1beta3
+apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
   name: postgres-db
@@ -35,3 +35,4 @@ spec:
         repoUrl: github.com?owner=dat94-03&repo=${{ parameters.name }}
         defaultBranch: main
         sourcePath: .
+
