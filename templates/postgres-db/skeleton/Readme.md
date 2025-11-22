@@ -1,4 +1,4 @@
-# ${{ parameters.name }} - Postgres Database
+# ${{ values.name }} - Postgres Database
 
 This DB instance was generated using the Backstage scaffolder.
 

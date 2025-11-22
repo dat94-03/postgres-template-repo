@@ -1,10 +1,10 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Component
 metadata:
-  name: ${{ parameters.name }}
-  description: "Postgres database service ${{ parameters.name }}"
+  name: ${{ values.name }}
+  description: "Postgres database service ${{ values.name }}"
   annotations:
-    mycompany.com/docker-container-name: ${{ parameters.name }}
+    mycompany.com/docker-container-name: ${{ values.name }}
 spec:
   type: service
   owner: NGT-Service
