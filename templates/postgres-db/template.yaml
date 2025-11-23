@@ -31,3 +31,9 @@ spec:
       input:
         repoUrl: github.com?owner=dat94-03&repo=${{ parameters.name }}
         defaultBranch: main
+   - id: register
+        name: Register component
+        action: catalog:register
+        input:
+          repoContentsUrl: ${{ steps.publish.output.remoteUrl }} 
+          catalogInfoPath: /catalog-info.yaml
